@@ -1,5 +1,5 @@
--- KAFI Service greenfield foundation.
--- Contains no production data and has no dependency on KAFI or KAFI 2.
+-- Independent KAFI Service platform foundation.
+-- The maintenance domain is extracted in later migrations from KAFI 2 without copying production data.
 
 create extension if not exists pgcrypto with schema extensions;
 create schema if not exists private;

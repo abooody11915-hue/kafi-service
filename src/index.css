@@ -1,0 +1,437 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Tajawal:wght@300;400;500;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* KAFI Master Palette — locked from approved brand reference */
+    /* Ivory white surface system — warm neutral, consistent across all components */
+    --ivory: 42 45% 96%;
+    --ivory-soft: 42 40% 94%;
+    --ivory-deep: 40 30% 90%;
+    --background: var(--ivory);
+    --foreground: 150 16% 14%;
+    --card: 0 0% 100%;
+    --card-foreground: 150 16% 14%;
+    --popover: var(--ivory);
+    --popover-foreground: 150 16% 14%;
+    /* Primary brand — #1D7A57 */
+    --primary: 155 62% 29%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 155 52% 40%;
+    --primary-deep: 157 60% 20%;
+    /* Gold accent — #C9A34E (use sparingly: highlights, premium chips, dividers) */
+    --gold: 42 53% 55%;
+    --gold-soft: 42 65% 92%;
+    --gold-deep: 38 60% 42%;
+    --secondary: 42 35% 94%;
+    --secondary-foreground: 150 16% 18%;
+    --muted: 42 30% 93%;
+    --muted-foreground: 150 8% 42%;
+    --accent: 42 40% 92%;
+    --accent-foreground: 155 30% 20%;
+    --destructive: 4 72% 52%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 40 22% 88%;
+    --input: 40 22% 88%;
+    --ring: 155 62% 29%;
+    /* Premium, restrained radius */
+    --radius: 0.875rem;
+    --success: 142 60% 38%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 88% 48%;
+    --warning-foreground: 0 0% 100%;
+    --info: 210 80% 50%;
+    --info-foreground: 0 0% 100%;
+    /* Gradients — hero CTAs only */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary-deep)) 0%, hsl(var(--primary)) 55%, hsl(var(--primary-glow)) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--muted) / 0.5) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(42 60% 60%) 0%, hsl(38 65% 48%) 100%);
+    /* Soft layered shadows */
+    --shadow-xs: 0 1px 2px 0 hsl(150 25% 10% / 0.03);
+    --shadow-sm: 0 1px 2px 0 hsl(150 25% 10% / 0.04);
+    --shadow-md: 0 4px 12px -4px hsl(150 25% 10% / 0.06);
+    --shadow-lg: 0 12px 28px -10px hsl(150 25% 10% / 0.10);
+    --shadow-glow: 0 6px 20px -8px hsl(var(--primary) / 0.28);
+    --shadow-premium: 0 1px 2px hsl(150 25% 10% / 0.04), 0 8px 24px -12px hsl(150 25% 10% / 0.08);
+    --shadow-premium-lg: 0 2px 4px hsl(150 25% 10% / 0.04), 0 16px 40px -16px hsl(150 25% 10% / 0.14);
+    --shadow-gold-glow: 0 0 32px -4px hsl(var(--gold) / 0.22);
+    /* Off-white surface for pill chips (subtly warmer than pure white) */
+    --off-white: 40 24% 98%;
+    /* Deeper emerald stop used in hero gradient */
+    --primary-deep-2: 158 65% 14%;
+    /* Premium polished shadows — large blur, low opacity */
+    --shadow-pill: 0 4px 14px -8px hsl(var(--primary-deep) / 0.18);
+    --shadow-tile: 0 8px 22px -18px hsl(var(--primary-deep) / 0.35);
+    --shadow-tile-hover: 0 14px 30px -18px hsl(var(--primary-deep) / 0.45);
+    --shadow-hero: 0 24px 60px -30px hsl(var(--primary-deep) / 0.55);
+    /* Hero gradient — deep → mid → deeper */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary-deep)) 0%, hsl(var(--primary)) 55%, hsl(var(--primary-deep-2)) 100%);
+    --sidebar-background: var(--ivory-soft);
+    --sidebar-foreground: 150 16% 22%;
+    --sidebar-primary: 155 62% 29%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 42 35% 92%;
+    --sidebar-accent-foreground: 150 16% 14%;
+    --sidebar-border: 40 22% 88%;
+    --sidebar-ring: 155 62% 29%;
+
+    /* Resthouse surface palette — youthful Saudi joy variant */
+    --resthouse-bg: var(--ivory);
+    --resthouse-surface: 0 0% 100%;
+    --resthouse-border: 40 22% 88%;
+    --resthouse-sand: 34 75% 92%;
+    --resthouse-sand-deep: 30 55% 82%;
+    --resthouse-sand-text: 22 55% 28%;
+    --resthouse-muted: 25 12% 45%;
+
+  }
+
+  .dark {
+    /* KAFI Dark — deep emerald surfaces, never pure black */
+    --background: 155 22% 7%;
+    --foreground: 140 10% 94%;
+    --card: 155 22% 10%;
+    --card-foreground: 140 10% 94%;
+    --popover: 155 22% 10%;
+    --popover-foreground: 140 10% 94%;
+    --primary: 155 55% 48%;
+    --primary-foreground: 155 30% 8%;
+    --primary-glow: 155 50% 58%;
+    --primary-deep: 157 55% 32%;
+    --gold: 42 60% 62%;
+    --gold-soft: 42 30% 18%;
+    --secondary: 155 18% 14%;
+    --secondary-foreground: 140 10% 92%;
+    --muted: 155 15% 14%;
+    --muted-foreground: 145 8% 62%;
+    --accent: 155 18% 16%;
+    --accent-foreground: 140 10% 92%;
+    --destructive: 4 62% 42%;
+    --destructive-foreground: 0 0% 96%;
+    --border: 155 15% 18%;
+    --input: 155 15% 18%;
+    --ring: 155 55% 48%;
+    --sidebar-background: 155 22% 9%;
+    --sidebar-foreground: 140 10% 90%;
+    --sidebar-primary: 155 55% 48%;
+    --sidebar-primary-foreground: 155 30% 8%;
+    --sidebar-accent: 155 18% 14%;
+    --sidebar-accent-foreground: 140 10% 92%;
+    --sidebar-border: 155 15% 16%;
+    --sidebar-ring: 155 55% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html {
+    direction: rtl;
+    -webkit-tap-highlight-color: transparent;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Tajawal', 'Cairo', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    width: 100%;
+    min-height: 100dvh;
+    padding-top: env(safe-area-inset-top);
+    text-align: right;
+    letter-spacing: -0.005em;
+    font-feature-settings: "ss01", "cv11", "tnum";
+  }
+
+  /* Headings use Cairo for stronger display character (matches brand reference) */
+  h1, h2, h3, h4, h5, h6,
+  .font-display {
+    font-family: 'Cairo', 'Tajawal', system-ui, sans-serif;
+  }
+
+  /* Prevent iOS auto-zoom on input focus */
+  input, select, textarea {
+    font-size: 16px !important;
+    text-align: right;
+  }
+
+  input[dir="ltr"], textarea[dir="ltr"] {
+    text-align: left;
+  }
+
+  /* Ensure images/media don't overflow */
+  img, video, svg, canvas {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Premium typography hierarchy — clear, calm, scannable */
+  h1 {
+    @apply text-[22px] font-extrabold leading-tight tracking-tight;
+  }
+  h2 {
+    @apply text-[17px] font-bold leading-snug tracking-tight;
+  }
+  h3 {
+    @apply text-[15px] font-semibold leading-snug;
+  }
+
+  /* RTL-aware logical spacing for flex gaps */
+  [dir="rtl"] .flex-row-reverse {
+    flex-direction: row;
+  }
+}
+
+@layer utilities {
+  /* Card hover / tap animation */
+  .card-interactive {
+    @apply transition-all duration-200 ease-out;
+  }
+  .card-interactive:active {
+    transform: scale(0.985);
+  }
+  .card-interactive:hover {
+    box-shadow: 0 8px 25px -8px hsl(var(--foreground) / 0.08);
+  }
+
+  /* Stagger delay utilities */
+  .stagger-1 { animation-delay: 0.015s; }
+  .stagger-2 { animation-delay: 0.03s; }
+  .stagger-3 { animation-delay: 0.045s; }
+  .stagger-4 { animation-delay: 0.06s; }
+  .stagger-5 { animation-delay: 0.075s; }
+  .stagger-6 { animation-delay: 0.09s; }
+  .stagger-7 { animation-delay: 0.105s; }
+  .stagger-8 { animation-delay: 0.12s; }
+
+  .animate-route-progress {
+    animation: route-progress 0.9s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  /* Premium layered shadows */
+  .shadow-card {
+    box-shadow: var(--shadow-premium);
+  }
+  .shadow-card-hover {
+    box-shadow: var(--shadow-premium-lg);
+  }
+  .shadow-elevated {
+    box-shadow: var(--shadow-premium-lg);
+  }
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  .shadow-gold-glow {
+    box-shadow: var(--shadow-gold-glow);
+  }
+  .shadow-premium {
+    box-shadow: var(--shadow-premium);
+  }
+  .shadow-premium-lg {
+    box-shadow: var(--shadow-premium-lg);
+  }
+
+  /* Premium gradient backgrounds */
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+  .bg-gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+  .bg-gradient-gold {
+    background: var(--gradient-gold);
+  }
+  .text-gold {
+    color: hsl(var(--gold));
+  }
+  .border-gold {
+    border-color: hsl(var(--gold) / 0.4);
+  }
+
+  /* Button press */
+  .btn-press {
+    @apply transition-all duration-200 active:scale-[0.97];
+  }
+
+  /* Touch-friendly minimum size */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Hide scrollbar */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Premium icon container */
+  .icon-container {
+    @apply flex items-center justify-center rounded-2xl flex-shrink-0;
+  }
+  .icon-container-sm {
+    @apply w-8 h-8 rounded-xl;
+  }
+  .icon-container-md {
+    @apply w-10 h-10 rounded-2xl;
+  }
+  .icon-container-lg {
+    @apply w-12 h-12 rounded-2xl;
+  }
+
+  /* RTL-aware directional utilities */
+  .gap-inline-2 {
+    gap: 0.5rem;
+  }
+  .gap-inline-3 {
+    gap: 0.75rem;
+  }
+
+  /* Premium number display */
+  .number-display {
+    @apply font-extrabold tabular-nums;
+    font-feature-settings: "tnum";
+  }
+
+  /* Skeleton shimmer enhancement */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--muted)) 0%,
+      hsl(var(--muted) / 0.5) 50%,
+      hsl(var(--muted)) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.4s ease-in-out infinite;
+  }
+  @keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  /* Gentle entrance for list items */
+  .animate-slide-up {
+    animation: slide-up 0.3s ease-out both;
+  }
+  @keyframes slide-up {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Pulse for live/realtime indicators */
+  .pulse-dot {
+    animation: pulse-dot 1.6s ease-in-out infinite;
+  }
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(0.95); }
+  }
+
+  /* Premium shadows utilities */
+  .shadow-pill { box-shadow: var(--shadow-pill); }
+  .shadow-tile { box-shadow: var(--shadow-tile); }
+  .shadow-tile-hover:hover { box-shadow: var(--shadow-tile-hover); }
+  .shadow-hero { box-shadow: var(--shadow-hero); }
+
+  /* Hero gradient util */
+  .bg-gradient-hero { background: var(--gradient-hero); }
+
+  /* Horizontal shimmer (light sweep across progress bar) */
+  .animate-shimmer-x::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent 0%, hsl(0 0% 100% / 0.35) 50%, transparent 100%);
+    transform: translateX(-120%);
+    animation: shimmer-x 2.6s ease-in-out infinite;
+  }
+  @keyframes shimmer-x {
+    0% { transform: translateX(-120%); }
+    100% { transform: translateX(120%); }
+  }
+
+  /* Better focus-visible for keyboard nav (a11y) */
+  *:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+    border-radius: 0.5rem;
+  }
+
+  /* Disable text selection on UI chrome */
+  .no-select {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  /* Respect reduced-motion preference (a11y) */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@keyframes route-progress {
+  0% { transform: translateX(220%); }
+  100% { transform: translateX(-320%); }
+}
+
+/* ============================================================
+   RTL ICON MIRRORING
+   ------------------------------------------------------------
+   The app is authored natively in RTL (dir="rtl" on <html>) and
+   all spacing/positioning utilities are written with RTL in mind.
+   We only auto-mirror directional arrow/chevron icons so they
+   visually flow right-to-left, without altering layout.
+   ============================================================ */
+[dir="rtl"] .lucide-chevron-left,
+[dir="rtl"] .lucide-chevron-right,
+[dir="rtl"] .lucide-arrow-left,
+[dir="rtl"] .lucide-arrow-right,
+[dir="rtl"] .lucide-chevrons-left,
+[dir="rtl"] .lucide-chevrons-right,
+[dir="rtl"] .lucide-move-left,
+[dir="rtl"] .lucide-move-right {
+  transform: scaleX(-1);
+}
+
+/* Opt-out helper: add `keep-dir` to any icon you do NOT want flipped */
+[dir="rtl"] .keep-dir { transform: none !important; }
+
+/* === Print styles for legal/financial documents === */
+@media print {
+  @page { size: A4; margin: 14mm; }
+  body { background: white !important; }
+  .no-print, nav, header, footer, [data-bottom-nav], aside { display: none !important; }
+  .print\:block { display: block !important; }
+  .print\:hidden { display: none !important; }
+  main { padding: 0 !important; }
+  * { box-shadow: none !important; }
+  .print\:break-inside-avoid { break-inside: avoid; page-break-inside: avoid; }
+}
+
+/* === Onboarding animations === */
+@keyframes fade-scale {
+  0% { opacity: 0; transform: scale(0.97) translateX(16px); }
+  100% { opacity: 1; transform: scale(1) translateX(0); }
+}
+@keyframes fade-up {
+  0% { opacity: 0; transform: translateY(12px); }
+  100% { opacity: 1; transform: translateY(0); }
+}

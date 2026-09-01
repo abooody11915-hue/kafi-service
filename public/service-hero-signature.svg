@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 240" fill="none">
+  <defs>
+    <linearGradient id="wall" x1="25" y1="20" x2="300" y2="220" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0E5F46"/><stop offset=".55" stop-color="#1D7A57"/><stop offset="1" stop-color="#0A513C"/>
+    </linearGradient>
+    <linearGradient id="chair" x1="75" y1="115" x2="165" y2="220" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2B8C67"/><stop offset="1" stop-color="#0E6046"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="9" stdDeviation="9" flood-color="#053B2D" flood-opacity=".28"/></filter>
+  </defs>
+  <rect width="360" height="240" rx="32" fill="url(#wall)"/>
+  <circle cx="124" cy="126" r="66" stroke="#EAF4EF" stroke-opacity=".13" stroke-width="2"/>
+  <circle cx="124" cy="126" r="52" stroke="#EAF4EF" stroke-opacity=".08" stroke-width="18"/>
+  <path d="M108 0v34" stroke="#D7B26A" stroke-width="2"/>
+  <path d="M92 50h32l-8-16h-16l-8 16Z" fill="#D9A44E"/>
+  <ellipse cx="108" cy="52" rx="20" ry="6" fill="#F2C777" opacity=".9"/>
+  <g filter="url(#shadow)">
+    <path d="M50 175c0-24 13-40 36-40h61c23 0 36 16 36 40v28H50v-28Z" fill="url(#chair)"/>
+    <rect x="61" y="103" width="111" height="74" rx="28" fill="#197756"/>
+    <rect x="44" y="145" width="35" height="66" rx="16" fill="#155F47"/>
+    <rect x="157" y="145" width="35" height="66" rx="16" fill="#155F47"/>
+    <rect x="73" y="163" width="86" height="45" rx="18" fill="#24815F"/>
+    <path d="M116 120c16 0 29 8 29 20s-13 20-29 20-29-8-29-20 13-20 29-20Z" fill="#F4EEE2"/>
+    <path d="M93 125l12 9-11 8" stroke="#D8CDBA" stroke-width="2" opacity=".6"/>
+  </g>
+  <g transform="translate(202 124)">
+    <rect x="23" y="54" width="44" height="38" rx="5" fill="#E9E3D6"/>
+    <path d="M45 58c-8-24-5-46 10-65M45 58c4-24 17-40 34-50M45 58c-13-20-29-31-45-33" stroke="#7AA66E" stroke-width="4" stroke-linecap="round"/>
+    <ellipse cx="56" cy="2" rx="8" ry="19" transform="rotate(22 56 2)" fill="#6D9A64"/>
+    <ellipse cx="78" cy="12" rx="8" ry="18" transform="rotate(48 78 12)" fill="#82AD74"/>
+    <ellipse cx="17" cy="25" rx="8" ry="18" transform="rotate(-54 17 25)" fill="#6F9A65"/>
+  </g>
+  <path d="M250 45c40-20 77-16 110 6" stroke="#fff" stroke-opacity=".035" stroke-width="1.5"/>
+  <path d="M246 55c44-17 80-10 114 10" stroke="#fff" stroke-opacity=".035" stroke-width="1.5"/>
+</svg>
