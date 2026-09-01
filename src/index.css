@@ -87,6 +87,23 @@
     --resthouse-sand-text: 22 55% 28%;
     --resthouse-muted: 25 12% 45%;
 
+    /* KAFI Service semantic design tokens — code is the source of truth. */
+    --service-canvas: #f7f6f1;
+    --service-surface: #ffffff;
+    --service-surface-subtle: #f0f5f2;
+    --service-ink: #17231f;
+    --service-ink-muted: #61706a;
+    --service-brand: #087252;
+    --service-brand-strong: #064a38;
+    --service-brand-soft: #e7f3ee;
+    --service-border: #dfe5e1;
+    --service-radius-sm: 12px;
+    --service-radius-md: 18px;
+    --service-radius-lg: 24px;
+    --service-radius-xl: 32px;
+    --service-shadow-card: 0 1px 2px rgba(6, 74, 56, .04), 0 12px 32px -24px rgba(6, 74, 56, .28);
+    --service-shadow-float: 0 18px 48px -28px rgba(6, 74, 56, .42);
+
   }
 
   .dark {
@@ -150,6 +167,7 @@
     text-align: right;
     letter-spacing: -0.005em;
     font-feature-settings: "ss01", "cv11", "tnum";
+    background: var(--service-canvas);
   }
 
   /* Headings use Cairo for stronger display character (matches brand reference) */
@@ -176,13 +194,13 @@
 
   /* Premium typography hierarchy — clear, calm, scannable */
   h1 {
-    @apply text-[22px] font-extrabold leading-tight tracking-tight;
+    @apply text-2xl font-extrabold leading-tight tracking-tight;
   }
   h2 {
-    @apply text-[17px] font-bold leading-snug tracking-tight;
+    @apply text-xl font-bold leading-snug tracking-tight;
   }
   h3 {
-    @apply text-[15px] font-semibold leading-snug;
+    @apply text-base font-semibold leading-snug;
   }
 
   /* RTL-aware logical spacing for flex gaps */
@@ -390,6 +408,34 @@
 @keyframes route-progress {
   0% { transform: translateX(220%); }
   100% { transform: translateX(-320%); }
+}
+
+@layer components {
+  .service-page-title { @apply mt-1 text-2xl font-black tracking-tight md:text-3xl; color: var(--service-ink); }
+  .service-page-description { @apply mt-2 max-w-2xl text-sm leading-7; color: var(--service-ink-muted); }
+  .service-eyebrow { @apply text-xs font-black tracking-wide; color: var(--service-brand); }
+  .service-section-title { @apply text-lg font-black md:text-xl; color: var(--service-ink); }
+  .service-section-description { @apply mt-1 text-sm leading-6; color: var(--service-ink-muted); }
+  .service-panel { @apply border bg-white; border-color: var(--service-border); border-radius: var(--service-radius-lg); box-shadow: var(--service-shadow-card); }
+  .service-status { @apply inline-flex min-h-7 items-center whitespace-nowrap rounded-full px-3 py-1 text-xs font-bold; }
+  .service-status--neutral { @apply bg-slate-100 text-slate-700; }
+  .service-status--info { @apply bg-blue-50 text-blue-700; }
+  .service-status--warning { @apply bg-amber-50 text-amber-800; }
+  .service-status--success { background: var(--service-brand-soft); color: var(--service-brand-strong); }
+  .service-status--danger { @apply bg-red-50 text-red-700; }
+  .service-metric-card { @apply flex min-h-40 flex-col border bg-white p-4; border-color: var(--service-border); border-radius: var(--service-radius-md); box-shadow: var(--service-shadow-card); }
+  .service-metric-card .service-icon-box { @apply grid h-10 w-10 place-items-center rounded-xl; background: var(--service-brand-soft); color: var(--service-brand); }
+  .service-metric-card .service-icon-box svg { @apply h-5 w-5; }
+  .service-metric-card strong { @apply mt-4 text-3xl font-black tabular-nums; color: var(--service-ink); }
+  .service-metric-card > span:not(.service-icon-box) { @apply mt-1 text-sm font-bold; color: var(--service-ink-muted); }
+  .service-metric-card small { @apply mt-auto pt-2 text-xs; color: var(--service-ink-muted); }
+  .service-empty-state { @apply border border-dashed bg-white px-5 py-10 text-center; border-color: var(--service-border); border-radius: var(--service-radius-lg); }
+  .service-empty-icon { @apply mx-auto grid h-12 w-12 place-items-center rounded-2xl; background: var(--service-brand-soft); color: var(--service-brand); }
+  .service-empty-icon svg { @apply h-6 w-6; }
+  .service-empty-state h3 { @apply mt-4 text-lg font-black; }
+  .service-empty-state p { @apply mx-auto mt-2 max-w-md text-sm leading-6; color: var(--service-ink-muted); }
+  .service-loading { @apply grid min-h-56 place-items-center content-center gap-3 text-sm font-bold; color: var(--service-brand); }
+  .service-loading svg { @apply h-6 w-6; }
 }
 
 /* ============================================================

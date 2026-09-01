@@ -1795,6 +1795,34 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      cancel_maintenance_request: {
+        Args: {
+          idempotency_key_input: string
+          reason_input: string
+          request_id_input: string
+        }
+        Returns: Database["public"]["Tables"]["maintenance_requests"]["Row"]
+      }
+      register_maintenance_provider: {
+        Args: {
+          business_kind_input: Database["public"]["Enums"]["provider_business_type"]
+          iban_input: string
+          name_input: string
+          phone_input?: string | null
+          service_codes_input: string[]
+        }
+        Returns: Database["public"]["Tables"]["maintenance_providers"]["Row"]
+      }
+      reschedule_maintenance_request: {
+        Args: {
+          idempotency_key_input: string
+          reason_input?: string | null
+          request_id_input: string
+          scheduled_date_input: string
+          scheduled_time_input: string
+        }
+        Returns: Database["public"]["Tables"]["maintenance_requests"]["Row"]
+      }
       accept_provider_offer: {
         Args: { idempotency_key_input: string; offer_id_input: string }
         Returns: {
@@ -2828,4 +2856,3 @@ export const Constants = {
     },
   },
 } as const
-
