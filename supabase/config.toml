@@ -1,0 +1,4 @@
+project_id = "qrhthyhdzmwxaqetopkt"
+
+[functions.authentica-phone-otp]
+verify_jwt = false
